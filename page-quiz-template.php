@@ -2080,7 +2080,7 @@ const resultHtmlShow = `
         <button class="full-btn" onclick="showFullResultsWithClass()">
         แสดงผลลัพธ์ทั้งหมด
         </button>
-          <button  onclick="copyLink()" id="retryButton" style="margin-top: 20px; display: none; width: 80%;      background: #28496F;
+          <button  onclick="copyLink()" id="retryButton" style="margin-top: 20px; display: none; width: 100%; background: #28496F;
                         color: white;
                         border: none;
                         padding: 15px 40px;
@@ -2090,18 +2090,18 @@ const resultHtmlShow = `
                         font-weight: bold;
                         letter-spacing: 0.5px;
                         transition: all 0.3s ease;
-                        margin: 10px 5px;
                         font-family: 'Mitr', sans-serif;
                         font-weight: 500;" class="submit-btn">
             <i class="fas fa-share-nodes mr-2"></i>
         แชร์แบบทดสอบให้เพื่อน</button>
-              <button class="sendemail-btn" onclick="sentEmail()" style="margin-top: 10px; display: none;">
-        <i class="fas fa-paper-plane" style="font-size: 18px; color: #fff"></i>    
-        ส่งผลลัพธ์ทาง E-mail
-        </button>
+    
     `;
 }
 
+    // <button class="sendemail-btn" onclick="sentEmail()" style="margin-top: 10px; display: none; width: 100%;">
+    //     <i class="fas fa-paper-plane" style="font-size: 18px; color: #fff"></i>    
+    //     ส่งผลลัพธ์ทาง E-mail
+    //     </button>
 // Restart quiz
 // function restartQuiz() {
 //     currentQuestionIndex = 0;
@@ -2143,14 +2143,15 @@ function showFullResultsWithClass() {
 
     const sendEmailBtn = document.querySelector('.sendemail-btn');
     if (sendEmailBtn) {
-        shareBtn.style.display = 'block';
+        sendEmailBtn.style.display = 'block';
     }
 
-     const restartBtn = document.querySelector('.restart-btn');
-    if (sendEmailBtn) {
-        shareBtn.style.display = 'none';
+    const restartBtn = document.querySelector('.restart-btn');
+    if (restartBtn) {
+        restartBtn.style.display = 'none';
     }
 
+}
 
         function sentEmail() {
             // Create popup overlay
@@ -2285,8 +2286,8 @@ function showFullResultsWithClass() {
                  </div>
 
                  <div id="successContainer" style="display: none; text-align: center; margin-bottom: 40px;">
-                    <div id="successMessage" style="font-size: 20px; color: green; font-family: 'Mitr', sans-serif;">ส่งอีเมลสำเร็จแล้ว!</div>
-                    <button  onclick="copyLink()" id="retryButton" style="margin-top: 20px; display: none; width: 80%;" class="submit-btn">
+                    <div id="successMessage" style="font-size: 30px; color: green; font-family: 'Mitr', sans-serif; margin-top: 20px">ส่งอีเมลสำเร็จแล้ว!</div>
+                    <button  onclick="copyLink()" id="retryButton" style="margin-top: 20px; display: block; width: 80%; margin: 20px auto;" class="submit-btn">
                     <i class="fas fa-share-nodes mr-2"></i>
                     แชร์แบบทดสอบให้เพื่อน</button>
                 </div>
