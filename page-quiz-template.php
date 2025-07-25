@@ -162,6 +162,7 @@ Template Name: Chakra Quiz
     text-decoration: none;
     color: inherit;
     position: relative;
+    margin: 10px 0px;
 }
 
 .option:hover {
@@ -257,6 +258,21 @@ Template Name: Chakra Quiz
     border: none;
     border-radius: 12px;
     padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: 'Mitr', sans-serif !important;
+    margin-bottom: 10px;
+}
+
+.full-btn {
+    background: #fff;
+    border: 1px solid #28496F;
+    color: #28496F;
+    /* border: none; */
+    border-radius: 12px;
+    padding: 12px 62px;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
@@ -470,7 +486,14 @@ const quizData = [
 
         // Section 4: จักระที่ 4 - อนาหตะ (Anahata)
     {
-        id: 10,
+    id: 10,
+    section: 4,
+    sectionName: 'อนาหตะ (Anahata)',
+    imageOnly: true,
+    image: "/img/Insert-afterQ09.png"
+    },
+    {
+        id: 11,
         section: 4,
         sectionName: 'อนาหตะ (Anahata)',
         question: 'คุณรู้สึกอย่างไรเกี่ยวกับความรัก ความสัมพันธ์ และการเชื่อมโยงกับผู้อื่น?',
@@ -482,8 +505,9 @@ const quizData = [
             { text: '🤔 ฉันให้ความรักอย่างเต็มที่ แม้บางครั้งยังเรียนรู้เรื่องการรักษาขอบเขตตนเองอยู่', value: 5 }
         ]
     },
+
     {
-        id: 11,
+        id: 12,
         section: 4,
         sectionName: 'อนาหตะ (Anahata)',
         question: 'คุณรู้สึกอย่างไรเมื่อต้องอยู่กับตัวเองโดยลำพัง?',
@@ -496,7 +520,7 @@ const quizData = [
         ]
     },
     {
-        id: 12,
+        id: 13,
         section: 4,
         sectionName: 'อนาหตะ (Anahata)',
         question: 'คุณสามารถให้อภัยตนเองและผู้อื่นได้มากเพียงใด?',
@@ -512,7 +536,7 @@ const quizData = [
 
         // Section 5: จักระที่ 5 - วิศุทธะ (Vishuddha)
     {
-        id: 13,
+        id: 14,
         section: 5,
         sectionName: 'วิศุทธะ (Vishuddha)',
         question: 'คุณรู้สึกอย่างไรกับการพูด ความคิด และการแสดงออกของตนเอง?',
@@ -525,7 +549,7 @@ const quizData = [
         ]
     },
     {
-        id: 14,
+        id: 15,
         section: 5,
         sectionName: 'วิศุทธะ (Vishuddha)',
         question: 'คุณเปิดใจรับฟังความคิดเห็นของผู้อื่นและความจริงที่อาจขัดกับตัวเองได้มากแค่ไหน?',
@@ -538,7 +562,7 @@ const quizData = [
         ]
     },
     {
-        id: 15,
+        id: 16,
         section: 5,
         sectionName: 'วิศุทธะ (Vishuddha)',
         question: 'คุณกล้าพูดในสิ่งที่เป็นความจริงของตัวเองได้แค่ไหน?',
@@ -553,7 +577,7 @@ const quizData = [
 
     // Section 6: จักระที่ 6 - วิศุทธะ (Vishuddha)
     {
-        id: 16,
+        id: 17,
         section: 6,
         sectionName: 'อัชญา (Ajna)',
         question: 'คุณรู้สึกอย่างไรกับญาณทัศนะ ความเข้าใจ และการตัดสินใจจากภายใน?',
@@ -566,7 +590,7 @@ const quizData = [
         ]
     },
     {
-        id: 17,
+        id: 18,
         section: 6,
         sectionName: 'อัชญา (Ajna)',
         question: 'คุณมองภาพอนาคตของตนเองได้ชัดเจนเพียงใด?',
@@ -579,7 +603,7 @@ const quizData = [
         ]
     },
     {
-        id: 18,
+        id: 19,
         section: 6,
         sectionName: 'อัชญา (Ajna)',
         question: 'เมื่อคุณมีความรู้สึกหรือภาพในใจเกี่ยวกับบางสิ่ง คุณมักตอบสนองอย่างไร?',
@@ -591,11 +615,18 @@ const quizData = [
             { text: '🤔 ฉันดื่มด่ำกับญาณภายในมาก จนบางครั้งลืมเช็กความเป็นจริงรอบตัว', value: 5 }
         ]
     },
+    {
+    id: 20,
+    section: 4,
+    sectionName: 'อนาหตะ (Anahata)',
+    imageOnly: true,
+    image: "/img/Insert-afterQ18.png"
+    },
 
 
     // Section 7: จักระที่ 7 - วิศุทธะ (Vishuddha)
     {
-        id: 19,
+        id: 21,
         section: 7,
         sectionName: 'สหัสราระ (Sahasrara)',
         question: 'คุณรู้สึกอย่างไรกับการเชื่อมต่อกับสิ่งที่สูงกว่าตัวตน — เช่น จักรวาล หรือสติรู้เหนืออัตตา?',
@@ -608,7 +639,7 @@ const quizData = [
         ]
     },
     {
-        id: 20,
+        id: 22,
         section: 7,
         sectionName: 'สหัสราระ (Sahasrara)',
         question: 'คุณสามารถอยู่กับความเงียบ หรือสภาวะ ‘ไม่มีอะไร’ ได้มากเพียงใด?',
@@ -621,7 +652,7 @@ const quizData = [
         ]
     },
     {
-        id: 21,
+        id: 23,
         section: 7,
         sectionName: 'สหัสราระ (Sahasrara)',
         question: 'คุณไว้วางใจการนำทางจากพลังที่สูงกว่าตนเองหรือไม่?',
@@ -636,7 +667,7 @@ const quizData = [
 
     // Section 8: จักระที่ 8 - ดวงดาววิญญาณ (Soul Star Chakra)
     {
-        id: 22,
+        id: 24,
         section: 8,
         sectionName: 'ดวงดาววิญญาณ (Soul Star Chakra)',
         question: 'คุณรู้สึกอย่างไรกับพันธะเก่า บทเรียนในอดีต และเส้นทางของวิญญาณ?',
@@ -649,7 +680,7 @@ const quizData = [
         ]
     },
     {
-        id: 23,
+        id: 25,
         section: 8,
         sectionName: 'ดวงดาววิญญาณ (Soul Star Chakra)',
         question: 'คุณรู้สึกว่าเข้าใจ ‘จุดประสงค์ของวิญญาณ’ ตัวเองมากน้อยเพียงใด?',
@@ -662,7 +693,7 @@ const quizData = [
         ]
     },
     {
-        id: 24,
+        id: 26,
         section: 8,
         sectionName: 'ดวงดาววิญญาณ (Soul Star Chakra)',
         question: 'คุณสามารถให้อภัย ปล่อยวาง และเรียนรู้จากอดีตได้มากเพียงใด?',
@@ -678,7 +709,7 @@ const quizData = [
 
     // Section 0: จักระที่ 0 - ดวงดาวพื้นพิภพ (Earth Star Chakra)
     {
-        id: 25,
+        id: 27,
         section: 9,
         sectionName: 'ดวงดาวพื้นพิภพ (Earth Star Chakra)',
         question: 'คุณรู้สึกเชื่อมโยงกับโลก ผืนดิน และรากของชีวิตเพียงใด?',
@@ -691,7 +722,7 @@ const quizData = [
         ]
     },
     {
-        id: 26,
+        id: 28,
         section: 9,
         sectionName: 'ดวงดาวพื้นพิภพ (Earth Star Chakra)',
         question: 'เมื่อรู้สึกสับสนหรือเหนื่อยล้า คุณใช้วิธีใดในการกลับมาสู่ความมั่นคง?',
@@ -704,7 +735,7 @@ const quizData = [
         ]
     },
     {
-        id: 27,
+        id: 29,
         section: 9,
         sectionName: 'ดวงดาวพื้นพิภพ (Earth Star Chakra)',
         question: 'คุณรู้สึกว่าตนเองมีรากที่ลึกเชื่อมกับครอบครัว วิถีชีวิต หรือโลกใบนี้หรือไม่?',
@@ -715,6 +746,13 @@ const quizData = [
             { text: '🤗 ฉันเชื่อมโยงกับรากทางกายและพลังบรรพบุรุษอย่างลึกซึ้ง', value: 4 },
             { text: '🤔 ฉันรู้สึกผูกพันแน่นแฟ้นกับรากเหง้า แม้ยังเรียนรู้ที่จะไม่จำกัดตัวเองไว้ในอดีต”', value: 5 }
         ]
+    },
+        {
+    id: 30,
+    section: 4,
+    sectionName: 'อนาหตะ (Anahata)',
+    imageOnly: true,
+    image: "/img/Insert-afterQ27.png"
     },
 
 
@@ -741,27 +779,142 @@ function initQuiz() {
 // Show current question
 function showQuestion() {
     const question = quizData[currentQuestionIndex];
+    const questionCounter = document.querySelector('.question-counter');
+    const questionPage = document.getElementById('question-page');
+    
+    // Check if this is an image-only slide (no question, no options)
+    if (question.imageOnly) {
+        // Set padding to 0 for image slides
+        if (questionPage) {
+            questionPage.style.padding = '0';
+        }
+        
+        // Hide question counter for image slides
+        if (questionCounter) {
+            questionCounter.style.display = 'none';
+        }
+        
+        // Show only image
+        const questionTitle = document.getElementById('question-title');
+        questionTitle.innerHTML = `<img src="${question.image}" alt="Slide Image" style="max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0;">`;
+        
+        // Hide options container
+        const optionsContainer = document.getElementById('options-container');
+        optionsContainer.innerHTML = '';
+        optionsContainer.style.display = 'none';
+        
+        return; // Exit function early
+    }
+    
+    // Restore original padding for normal questions
+    if (questionPage) {
+        questionPage.style.padding = ''; // Reset to CSS default
+    }
+    
+    // Show question counter for normal questions
+    if (questionCounter) {
+        questionCounter.style.display = 'block';
+    }
+    
+    // Update question counter
     document.getElementById('current-question').textContent = currentQuestionIndex + 1;
     document.getElementById('total-questions').textContent = quizData.length;
-    document.getElementById('question-title').textContent = question.question;
     
+    // Show options container for normal questions
     const optionsContainer = document.getElementById('options-container');
-    optionsContainer.innerHTML = '';
+    optionsContainer.style.display = 'block';
     
+    // Check if this question should show an image instead of text
+    if (question.image) {
+        // Hide question text and show image
+        const questionTitle = document.getElementById('question-title');
+        questionTitle.innerHTML = `<img src="${question.image}" alt="Question Image" style="max-width: 100%; height: auto; border-radius: 8px; margin: 10px 0;">`;
+    } else {
+        // Show normal question text
+        document.getElementById('question-title').textContent = question.question;
+    }
+         
+    optionsContainer.innerHTML = '';
+         
     question.options.forEach((option, index) => {
         const optionDiv = document.createElement('div');
         optionDiv.className = 'option';
         optionDiv.innerHTML = `<div class="option-text">${option.text}</div>`;
         optionDiv.onclick = () => selectOption(option.value, optionDiv);
-        
+                 
         // Restore selection if exists
         if (answers[currentQuestionIndex] === option.value) {
             optionDiv.classList.add('selected');
         }
-        
+                 
         optionsContainer.appendChild(optionDiv);
     });
 }
+
+// ตัวอย่างการปรับ quizData สำหรับข้อที่ 8 ที่เป็นภาพอย่างเดียว
+// ไม่มีคำถาม ไม่มีตัวเลือก แค่แสดงภาพ
+/*
+quizData[7] = { // index 7 = ข้อที่ 8
+    imageOnly: true, // บอกว่าเป็นสไลด์ภาพอย่างเดียว
+    image: "path/to/your/image.jpg" // URL หรือ path ของภาพ
+    // ไม่ต้องมี options, question, หรือ correct
+};
+
+// ตัวอย่างคำถามปกติที่มีภาพ
+quizData[8] = { // ข้อถัดไป
+    question: "คำถามข้อที่ 9",
+    options: [
+        { text: "ตัวเลือก A", value: "a" },
+        { text: "ตัวเลือก B", value: "b" },
+        { text: "ตัวเลือก C", value: "c" },
+        { text: "ตัวเลือก D", value: "d" }
+    ],
+    correct: "a"
+};
+*/
+
+// ตัวอย่างการปรับ quizData สำหรับข้อที่ 8 ที่เป็นภาพอย่างเดียว
+// ไม่มีคำถาม ไม่มีตัวเลือก แค่แสดงภาพ
+/*
+quizData[7] = { // index 7 = ข้อที่ 8
+    imageOnly: true, // บอกว่าเป็นสไลด์ภาพอย่างเดียว
+    image: "path/to/your/image.jpg" // URL หรือ path ของภาพ
+    // ไม่ต้องมี options, question, หรือ correct
+};
+
+// ตัวอย่างคำถามปกติที่มีภาพ
+quizData[8] = { // ข้อถัดไป
+    question: "คำถามข้อที่ 9",
+    options: [
+        { text: "ตัวเลือก A", value: "a" },
+        { text: "ตัวเลือก B", value: "b" },
+        { text: "ตัวเลือก C", value: "c" },
+        { text: "ตัวเลือก D", value: "d" }
+    ],
+    correct: "a"
+};
+*/
+// ตัวอย่างการปรับ quizData สำหรับข้อที่ 8 ที่เป็นภาพอย่างเดียว
+// ไม่มีคำถาม ไม่มีตัวเลือก แค่แสดงภาพ
+/*
+quizData[7] = { // index 7 = ข้อที่ 8
+    imageOnly: true, // บอกว่าเป็นสไลด์ภาพอย่างเดียว
+    image: "path/to/your/image.jpg" // URL หรือ path ของภาพ
+    // ไม่ต้องมี options, question, หรือ correct
+};
+
+// ตัวอย่างคำถามปกติที่มีภาพ
+quizData[8] = { // ข้อถัดไป
+    question: "คำถามข้อที่ 9",
+    options: [
+        { text: "ตัวเลือก A", value: "a" },
+        { text: "ตัวเลือก B", value: "b" },
+        { text: "ตัวเลือก C", value: "c" },
+        { text: "ตัวเลือก D", value: "d" }
+    ],
+    correct: "a"
+};
+*/
 
 // Select option
 function selectOption(value, element) {
@@ -782,10 +935,27 @@ function selectOption(value, element) {
 
 // Go to next question
 function goNext() {
-    if (answers[currentQuestionIndex] === undefined) {
+    const currentQuestion = quizData[currentQuestionIndex];
+    
+    // ถ้าเป็นสไลด์ภาพ ให้ไปต่อได้เลย ไม่ต้องตรวจสอบคำตอบ
+    if (currentQuestion.imageOnly) {
+        // ไปข้อถัดไป
+        if (currentQuestionIndex < quizData.length - 1) {
+            currentQuestionIndex++;
+            showQuestion();
+            updateProgress();
+            updateNavigationButtons();
+        } else {
+            showResult();
+        }
         return;
     }
     
+    // ถ้าเป็นคำถามปกติ ต้องตรวจสอบว่าตอบแล้วหรือยัง
+    if (answers[currentQuestionIndex] === undefined) {
+        return;
+    }
+         
     if (currentQuestionIndex < quizData.length - 1) {
         currentQuestionIndex++;
         showQuestion();
@@ -793,6 +963,58 @@ function goNext() {
         updateNavigationButtons();
     } else {
         showResult();
+    }
+}
+
+// ฟังก์ชันเสริม: อัพเดทสถานะปุ่ม Next
+function updateNavigationButtons() {
+    const nextButton = document.getElementById('next-button'); // หรือ ID ที่ใช้จริง
+    const prevButton = document.getElementById('prev-button'); // หรือ ID ที่ใช้จริง
+    const currentQuestion = quizData[currentQuestionIndex];
+    
+    // ปุ่ม Previous
+    if (prevButton) {
+        prevButton.disabled = currentQuestionIndex === 0;
+    }
+    
+    // ปุ่ม Next
+    if (nextButton) {
+        if (currentQuestion.imageOnly) {
+            // สไลด์ภาพ - เปิดใช้งานปุ่ม Next เสมอ
+            nextButton.disabled = false;
+            nextButton.textContent = currentQuestionIndex === quizData.length - 1 ? 'ดูผลลัพธ์' : 'ถัดไป';
+        } else {
+            // คำถามปกติ - ต้องตอบก่อน
+            const hasAnswer = answers[currentQuestionIndex] !== undefined;
+            nextButton.disabled = !hasAnswer;
+            nextButton.textContent = currentQuestionIndex === quizData.length - 1 ? 'ดูผลลัพธ์' : 'ถัดไป';
+        }
+    }
+}
+
+// ฟังก์ชัน goPrevious ที่รองรับสไลด์ภาพ
+function goPrevious() {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        showQuestion();
+        updateProgress();
+        updateNavigationButtons();
+    }
+}
+
+// อัพเดท progress bar ให้รองรับสไลด์ภาพ
+function updateProgress() {
+    const progressBar = document.getElementById('progress-bar'); // หรือ ID ที่ใช้จริง
+    
+    if (progressBar) {
+        const progress = ((currentQuestionIndex + 1) / quizData.length) * 100;
+        progressBar.style.width = progress + '%';
+    }
+    
+    // อัพเดทตัวเลขข้อ
+    const currentQuestionDisplay = document.getElementById('current-question');
+    if (currentQuestionDisplay) {
+        currentQuestionDisplay.textContent = currentQuestionIndex + 1;
     }
 }
 
@@ -833,9 +1055,14 @@ function showResult() {
     const sections = [];
     const sectionsData = [];
     
-    // Group quiz data by sections
+    // Group quiz data by sections - เฉพาะคำถามที่มี options เท่านั้น
     const sectionMap = {};
     quizData.forEach(question => {
+        // ข้ามสไลด์ภาพที่ไม่มี options
+        if (question.imageOnly || !question.options) {
+            return;
+        }
+        
         if (!sectionMap[question.section]) {
             sectionMap[question.section] = {
                 name: question.sectionName,
@@ -858,6 +1085,7 @@ function showResult() {
             }
         });
         
+        // ตรวจสอบว่ามีคำตอบครบ 3 ข้อหรือไม่
         if (sectionAnswers.length === 3) {
             const Q1 = sectionAnswers[0];
             const Q2 = sectionAnswers[1];
@@ -887,6 +1115,63 @@ function showResult() {
     }
     
     displayResults(sectionsData);
+}
+
+// วิธีการตั้งค่าข้อมูลที่แนะนำ:
+/*
+ตัวอย่างข้อมูลที่ถูกต้อง:
+
+// คำถามข้อที่ 7 (คำถามจริง)
+{
+    id: 7,
+    section: 3,
+    sectionName: 'มณีปุระ (Manipura)',
+    question: 'คำถามที่ 7...',
+    options: [...]
+},
+
+// ข้อที่ 8 (สไลด์ภาพ) - ใช้ id ที่ไม่ซ้ำ
+{
+    id: 8,
+    section: 3, // หรือ section ใหม่
+    sectionName: 'อนาหตะ (Anahata)',
+    imageOnly: true,
+    image: "images/anahata.jpg"
+    // ไม่มี options - จะถูกข้ามในการคำนวณ
+},
+
+// คำถามข้อที่ 9 (คำถามจริงต่อ)
+{
+    id: 9,
+    section: 4,
+    sectionName: 'อนาหตะ (Anahata)',
+    question: 'คำถามที่ 9...',
+    options: [...]
+}
+*/
+
+// ฟังก์ชันเสริม: ตรวจสอบความสมบูรณ์ของข้อมูล
+function validateQuizData() {
+    const questionsBySections = {};
+    
+    quizData.forEach(item => {
+        if (item.imageOnly) return; // ข้ามสไลด์ภาพ
+        
+        if (!questionsBySections[item.section]) {
+            questionsBySections[item.section] = [];
+        }
+        questionsBySections[item.section].push(item);
+    });
+    
+    // ตรวจสอบว่าแต่ละ section มี 3 คำถามหรือไม่
+    Object.keys(questionsBySections).forEach(section => {
+        const count = questionsBySections[section].length;
+        if (count !== 3) {
+            console.warn(`Section ${section} has ${count} questions, expected 3`);
+        }
+    });
+    
+    return questionsBySections;
 }
 
 // Determine category based on criteria for each specific section
@@ -1769,6 +2054,10 @@ const resultHtmlShow = `
         <i class="fas fa-paper-plane" style="font-size: 18px; color: #fff"></i>    
         ส่งผลลัพธ์ฉบับเต็มทาง E-mail
         </button>
+        <button class="full-btn" onclick="sentEmail()">
+        <i class="fas fa-arrow-down" style="font-size: 18px; color:  #28496F"></i>    
+        แสดงผลลัพธ์ทั้งหมด
+        </button>
     `;
 }
 
@@ -1897,7 +2186,7 @@ const resultHtmlShow = `
                 </div>
                 
                 <!-- Form Section -->
-                <div style="padding: 30px;">
+                <div style="padding: 30px;" id="form-section">
                     <input type="text" id="name" placeholder="Enter your name" class="email-input">
                     <input type="email" id="email" placeholder="Enter your email" class="email-input">
                     
@@ -1919,7 +2208,9 @@ const resultHtmlShow = `
 
                  <div id="successContainer" style="display: none; text-align: center; margin-bottom: 40px;">
                     <div id="successMessage" style="font-size: 20px; color: green; font-family: 'Mitr', sans-serif;">ส่งอีเมลสำเร็จแล้ว!</div>
-                    <button  onclick="location.reload();" id="retryButton" style="margin-top: 20px; display: none; width: 80%;" class="submit-btn">ทำแบบทดสอบอีกครั้ง</button>
+                    <button  onclick="copyLink()" id="retryButton" style="margin-top: 20px; display: none; width: 80%;" class="submit-btn">
+                    <i class="fas fa-share-nodes mr-2"></i>
+                    แชร์แบบทดสอบให้เพื่อน</button>
                 </div>
              
             `;
@@ -1944,6 +2235,78 @@ const resultHtmlShow = `
                 window.emailOverlay = null;
             }
         }
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href);
+            showCopyNotification();
+        }
+
+        function showCopyNotification() {
+    // สร้าง notification element
+    const notification = document.createElement('div');
+    notification.innerHTML = `
+        <div style="
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 10000;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: slideIn 0.3s ease-out;
+        ">
+            <span>✓</span>
+            <span style="font-family: 'Mitr', sans-serif;">คัดลอกลิงก์แล้ว!</span>
+        </div>
+    `;
+    
+    // เพิ่ม CSS animation
+    if (!document.getElementById('copy-notification-style')) {
+        const style = document.createElement('style');
+        style.id = 'copy-notification-style';
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    document.body.appendChild(notification);
+    
+    // ลบ notification หลัง 3 วินาที
+    setTimeout(() => {
+        notification.firstElementChild.style.animation = 'slideOut 0.3s ease-in';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 3000);
+}
      function showLoading() {
             $('#loadingOverlay').fadeIn(300);
             $('.submit-btn').prop('disabled', true);
@@ -1999,9 +2362,11 @@ const resultHtmlShow = `
                 const successContainer = document.getElementById("successContainer");
                 const successMessage = document.getElementById("successMessage");
                 const retryButton = document.getElementById("retryButton");
+                const formSection = document.getElementById("form-section");
 
                 successContainer.style.display = "block";
                 successMessage.style.display = "block";
+                formSection.style.display = "none";
 
                 // รอ 2 วิแล้วโชว์ปุ่ม
                 setTimeout(function () {
@@ -2058,7 +2423,7 @@ const resultHtmlShow = `
         //         const result = await response.json();
 
         //         if (result.success) {
-        //             statusDiv.innerHTML = '<p style="color: #27ae60;">✅ ส่งอีเมลสำเร็จแล้ว!</p>';
+        //             statusDiv.innerHTML = '<p style="color: #27ae60; margin-top: 20px; font-size: 30px">✅ ส่งอีเมลสำเร็จแล้ว!</p>';
         //             setTimeout(() => {
         //                 closeEmailPopup();
         //             }, 2000);
