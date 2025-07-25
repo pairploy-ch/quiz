@@ -266,13 +266,26 @@ Template Name: Chakra Quiz
     margin-bottom: 10px;
 }
 
+.sendemail-btn {
+    background: #28496F;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: 'Mitr', sans-serif !important;
+    margin-bottom: 10px;
+}
 .full-btn {
     background: #fff;
     border: 1px solid #28496F;
     color: #28496F;
     /* border: none; */
     border-radius: 12px;
-    padding: 12px 62px;
+    padding: 12px 72px;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
@@ -2005,8 +2018,8 @@ const resultHtmlShow = `
   <div style="text-align: left; max-height: 90%; overflow-y: auto; margin-bottom: 20px;">
     ${sectionsData.map((section, index) => {
       const isBlur = index >= 2;
-      return `
-        <div style="margin-bottom: 25px; padding: 15px; border-radius: 10px; background: ${section.category.color}15; border-left: 4px solid ${section.category.color}; ${isBlur ? 'filter: blur(4px); pointer-events: none;' : ''}">
+      const sectionHtml = `
+        <div class="show-all-results" style="margin-bottom: 25px; padding: 15px; border-radius: 10px; background: ${section.category.color}15; border-left: 4px solid ${section.category.color}; ${isBlur ? 'filter: blur(4px); pointer-events: none;' : ''}">
           <h3 style="margin: 0 0 10px 0; color: ${section.category.color}; display: flex; align-items: center; gap: 10px; font-weight: 500;">
               จักระที่ ${section.section} - ${section.name}
           </h3>
@@ -2019,7 +2032,7 @@ const resultHtmlShow = `
           <div style="margin-top: 20px; font-size: 16px; font-weight: 500;">
           ตัวอย่างชีวิตจริง:
           </div>
-           <div style="font-size: 14px; color: #666; margin-bottom: 10px;">
+          <div style="font-size: 14px; color: #666; margin-bottom: 10px;">
               ${section.category.examples}
           </div>
           <div style="margin-top: 20px; font-size: 16px; font-weight: 500;">
@@ -2035,28 +2048,56 @@ const resultHtmlShow = `
               ${section.category.healing}
           </div>
           <div style="font-size: 12px; color: #888;">
-              score: ${section.scores.Q1}, ${section.scores.Q2}, ${section.scores.Q3} | 
-              AVG: ${section.AVG.toFixed(2)} | 
-              VAR: ${section.VAR.toFixed(2)}
+              score: ${section.scores.Q1}, ${section.scores.Q2}, ${section.scores.Q3} |
+               AVG: ${section.AVG.toFixed(2)} |
+               VAR: ${section.VAR.toFixed(2)}
           </div>
         </div>
       `;
+      
+      // แทรกปุ่มหลัง section ที่ 2 (index 1)
+      if (index === 1) {
+        return sectionHtml + `
+          <div style="text-align: center; margin: 30px 0;">
+            <button class="restart-btn" onclick="sentEmail()">
+        <i class="fas fa-paper-plane" style="font-size: 18px; color: #fff"></i>    
+        ส่งผลลัพธ์ฉบับเต็มทาง E-mail
+        </button>
+          </div>
+        `;
+      }
+      
+      return sectionHtml;
     }).join('')}
   </div>
 `;
 
 
-
     document.getElementById('result-page').innerHTML = `
         <div class="logo" style="text-align: center; font-size: 20px; margin-bottom: 20px;">ผลการทดสอบจักระทั้ง 7 ของคุณ</div>
         ${resultHtmlShow}
-        <button class="restart-btn" onclick="sentEmail()">
-        <i class="fas fa-paper-plane" style="font-size: 18px; color: #fff"></i>    
-        ส่งผลลัพธ์ฉบับเต็มทาง E-mail
-        </button>
-        <button class="full-btn" onclick="sentEmail()">
-        <i class="fas fa-arrow-down" style="font-size: 18px; color:  #28496F"></i>    
+       
+        <button class="full-btn" onclick="showFullResultsWithClass()">
         แสดงผลลัพธ์ทั้งหมด
+        </button>
+          <button  onclick="copyLink()" id="retryButton" style="margin-top: 20px; display: none; width: 80%;      background: #28496F;
+                        color: white;
+                        border: none;
+                        padding: 15px 40px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        font-size: 16px;
+                        font-weight: bold;
+                        letter-spacing: 0.5px;
+                        transition: all 0.3s ease;
+                        margin: 10px 5px;
+                        font-family: 'Mitr', sans-serif;
+                        font-weight: 500;" class="submit-btn">
+            <i class="fas fa-share-nodes mr-2"></i>
+        แชร์แบบทดสอบให้เพื่อน</button>
+              <button class="sendemail-btn" onclick="sentEmail()" style="margin-top: 10px; display: none;">
+        <i class="fas fa-paper-plane" style="font-size: 18px; color: #fff"></i>    
+        ส่งผลลัพธ์ทาง E-mail
         </button>
     `;
 }
@@ -2072,6 +2113,43 @@ const resultHtmlShow = `
     
 //     initQuiz();
 // }
+function showFullResultsWithClass() {
+    // เพิ่ม CSS class เพื่อลบ blur
+    const style = document.createElement('style');
+    style.textContent = `
+        .show-all-results div[style*="filter: blur"] {
+            filter: none !important;
+            pointer-events: auto !important;
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // เพิ่ม class ให้ result page
+    const resultPage = document.getElementById('result-page');
+    if (resultPage) {
+        resultPage.classList.add('show-all-results');
+    }
+    
+    // ซ่อนปุ่ม
+    const fullBtn = document.querySelector('.full-btn');
+    if (fullBtn) {
+        fullBtn.style.display = 'none';
+    }
+    
+    const shareBtn = document.querySelector('.submit-btn');
+    if (shareBtn) {
+        shareBtn.style.display = 'block';
+    }
+
+    const sendEmailBtn = document.querySelector('.sendemail-btn');
+    if (sendEmailBtn) {
+        shareBtn.style.display = 'block';
+    }
+
+     const restartBtn = document.querySelector('.restart-btn');
+    if (sendEmailBtn) {
+        shareBtn.style.display = 'none';
+    }
 
 
         function sentEmail() {
