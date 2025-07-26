@@ -1240,7 +1240,7 @@ function getSection1(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 1.0 && VAR < 2.0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 0.5 && VAR < 2.0) {
         return {
             code: 'D',
             name: 'มั่นคงภายนอก แต่อ่อนไหวภายใน',
@@ -1252,7 +1252,7 @@ function getSection1(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.5 && AVG <= 4.2 && VAR <= 1) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
         return {
             code: 'C',
             name: 'มีรากที่มั่นคง',
@@ -1264,7 +1264,7 @@ function getSection1(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 2.5 && AVG <= 3.4) {
+    if (AVG >= 2.5 && AVG <= 3.4 && VAR <= 1) {
         return {
             code: 'B',
             name: 'กำลังปักรากให้ชีวิต',
@@ -1316,7 +1316,7 @@ function getSection2(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 1.0 && VAR < 2.0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 0.5 && VAR < 2.0) {
         return {
             code: 'D',
             name: 'เปิดใจแล้ว แต่ยังกลัวจะเจ็บอีก',
@@ -1328,7 +1328,7 @@ function getSection2(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.5 && AVG <= 4.2 && VAR <= 1) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
         return {
             code: 'C',
             name: 'ใจเปิด อารมณ์ไหลลื่น',
@@ -1340,7 +1340,7 @@ function getSection2(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 2.5 && AVG <= 3.4) {
+    if (AVG >= 2.5 && AVG <= 3.4 && VAR <= 1) {
         return {
             code: 'B',
             name: 'กำแพงเริ่มละลาย',
@@ -1393,7 +1393,7 @@ function getSection3(AVG, VAR, hasHighScore, scores) {
     }
 
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 1.0 && VAR < 2.0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 0.5 && VAR < 2.0) {
         return {
             code: 'D',
             name: 'มั่นใจเป็นช่วง ๆ สั่นไหวในบางคราว',
@@ -1405,7 +1405,7 @@ function getSection3(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.5 && AVG <= 4.2 && VAR <= 1) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
         return {
             code: 'C',
             name: 'แสงแห่งพลังเปล่งออกอย่างกลมกลืน',
@@ -1417,7 +1417,7 @@ function getSection3(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 2.5 && AVG <= 3.4) {
+    if (AVG >= 2.5 && AVG <= 3.4 && VAR <= 1) {
         return {
             code: 'B',
             name: 'กล้าก้าว แม้จะยังกลัว',
@@ -1470,7 +1470,7 @@ function getSection4(AVG, VAR, hasHighScore, scores) {
     }
 
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 1.0 && VAR < 2.0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 0.5 && VAR < 2.0) {
         return {
             code: 'D',
             name: 'รักอยู่...แต่ยังมีแผล',
@@ -1482,7 +1482,7 @@ function getSection4(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.5 && AVG <= 4.2 && VAR <= 1) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
         return {
             code: 'C',
             name: 'หัวใจเปิด อบอุ่นแต่ไม่เปราะ',
@@ -1494,7 +1494,7 @@ function getSection4(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 2.5 && AVG <= 3.4) {
+    if (AVG >= 2.5 && AVG <= 3.4 && VAR <= 1) {
         return {
             code: 'B',
             name: 'ใจเริ่มอ่อนโยน',
@@ -1547,7 +1547,7 @@ function getSection5(AVG, VAR, hasHighScore, scores) {
     }
 
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 1.0 && VAR < 2.0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 0.5 && VAR < 2.0) {
         return {
             code: 'D',
             name: 'เสียงไม่เท่ากันทุกวัน',
@@ -1559,7 +1559,7 @@ function getSection5(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.5 && AVG <= 4.2 && VAR <= 1) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
         return {
             code: 'C',
             name: 'เสียงที่กลมกลืนกับหัวใจ',
@@ -1571,7 +1571,7 @@ function getSection5(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 2.5 && AVG <= 3.4) {
+    if (AVG >= 2.5 && AVG <= 3.4 && VAR <= 1) {
         return {
             code: 'B',
             name: 'เริ่มเอ่ยความจริง',
@@ -1624,7 +1624,7 @@ function getSection6(AVG, VAR, hasHighScore, scores) {
     }
 
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 1.0 && VAR < 2.0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 0.5 && VAR < 2.0) {
         return {
             code: 'D',
             name: 'ม่านบังตา',
@@ -1636,7 +1636,7 @@ function getSection6(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.5 && AVG <= 4.2 && VAR <= 1) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
         return {
             code: 'C',
             name: 'ตาที่สามเปิดในโลกจริง',
@@ -1648,7 +1648,7 @@ function getSection6(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 2.5 && AVG <= 3.4) {
+    if (AVG >= 2.5 && AVG <= 3.4 && VAR <= 1) {
         return {
             code: 'B',
             name: 'เริ่มเห็นแสงลางๆ',
@@ -1701,7 +1701,7 @@ function getSection7(AVG, VAR, hasHighScore, scores) {
     }
 
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 1.0 && VAR < 2.0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 0.5 && VAR < 2.0) {
         return {
             code: 'D',
             name: 'แสงกระพริบ',
@@ -1713,7 +1713,7 @@ function getSection7(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.5 && AVG <= 4.2 && VAR <= 1) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
         return {
             code: 'C',
             name: 'หลอมรวมกับแสง',
@@ -1725,7 +1725,7 @@ function getSection7(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 2.5 && AVG <= 3.4) {
+    if (AVG >= 2.5 && AVG <= 3.4 && VAR <= 1) {
         return {
             code: 'B',
             name: 'กำลังเปิดสู่จักรวาล',
@@ -1778,7 +1778,7 @@ function getSection8(AVG, VAR, hasHighScore, scores) {
     }
 
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 1.0 && VAR < 2.0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 0.5 && VAR < 2.0) {
         return {
             code: 'D',
             name: 'เห็นเส้นทางแต่ยังลังเล',
@@ -1790,7 +1790,7 @@ function getSection8(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.5 && AVG <= 4.2 && VAR <= 1) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
         return {
             code: 'C',
             name: 'เชื่อมกับเส้นทางวิญญาณ',
@@ -1802,7 +1802,7 @@ function getSection8(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 2.5 && AVG <= 3.4) {
+    if (AVG >= 2.5 && AVG <= 3.4 && VAR <= 1) {
         return {
             code: 'B',
             name: 'เริ่มระลึกพันธะ',
@@ -1855,7 +1855,7 @@ function getSection9(AVG, VAR, hasHighScore, scores) {
     }
 
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 1.0 && VAR < 2.0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR > 0.5 && VAR < 2.0) {
         return {
             code: 'D',
             name: 'มีราก แต่ยังไม่ลึก',
@@ -1867,7 +1867,7 @@ function getSection9(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.5 && AVG <= 4.2 && VAR <= 1) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
         return {
             code: 'C',
             name: 'หยั่งรากมั่นคงบนโลก',
@@ -1879,7 +1879,7 @@ function getSection9(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 2.5 && AVG <= 3.4) {
+    if (AVG >= 2.5 && AVG <= 3.4 && VAR <= 1) {
         return {
             code: 'B',
             name: 'เริ่มกลับคืนสู่ผืนดิน',
@@ -2071,14 +2071,15 @@ const resultHtmlShow = `
     }).join('')}
   </div>
 `;
-
+// แสดงผลลัพธ์ทั้งหมด
 
     document.getElementById('result-page').innerHTML = `
         <div class="logo" style="text-align: center; font-size: 20px; margin-bottom: 20px;">ผลการทดสอบจักระทั้ง 7 ของคุณ</div>
         ${resultHtmlShow}
        
-        <button class="full-btn" onclick="showFullResultsWithClass()">
-        แสดงผลลัพธ์ทั้งหมด
+        <button class="full-btn" onclick="copyLink()" style="display: none">
+        <i class="fas fa-share-nodes mr-2"></i>
+        แชร์แบบทดสอบให้เพื่อน
         </button>
           <button  onclick="copyLink()" id="retryButton" style="margin-top: 20px; display: none; width: 100%; background: #28496F;
                         color: white;
@@ -2151,11 +2152,17 @@ function showFullResultsWithClass() {
         restartBtn.style.display = 'none';
     }
 
+    const popup = document.querySelector('.popup-overlay');
+    if (popup) {
+        popup.style.display = 'none';
+    }
+
 }
 
         function sentEmail() {
             // Create popup overlay
             const overlay = document.createElement('div');
+            overlay.className = 'popup-overlay';
             overlay.style.cssText = `
                 position: fixed;
                 top: 0;
@@ -2287,9 +2294,9 @@ function showFullResultsWithClass() {
 
                  <div id="successContainer" style="display: none; text-align: center; margin-bottom: 40px;">
                     <div id="successMessage" style="font-size: 30px; color: green; font-family: 'Mitr', sans-serif; margin-top: 20px">ส่งอีเมลสำเร็จแล้ว!</div>
-                    <button  onclick="copyLink()" id="retryButton" style="margin-top: 20px; display: block; width: 80%; margin: 20px auto;" class="submit-btn">
-                    <i class="fas fa-share-nodes mr-2"></i>
-                    แชร์แบบทดสอบให้เพื่อน</button>
+                    <button  onclick="showFullResultsWithClass()" id="retryButton" style="margin-top: 20px; display: block; width: 80%; margin: 20px auto;" class="submit-btn">
+                   
+                    แสดงผลลัพธ์ทั้งหมด</button>
                 </div>
              
             `;
