@@ -503,7 +503,7 @@ const quizData = [
     section: 4,
     sectionName: 'อนาหตะ (Anahata)',
     imageOnly: true,
-    image: "/img/Insert-afterQ09.png"
+    image: "./img/Insert-afterQ09.png"
     },
     {
         id: 11,
@@ -1252,7 +1252,7 @@ function getSection1(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR <= 0) {
         return {
             code: 'C',
             name: 'มีรากที่มั่นคง',
@@ -1328,7 +1328,7 @@ function getSection2(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR <= 0) {
         return {
             code: 'C',
             name: 'ใจเปิด อารมณ์ไหลลื่น',
@@ -1405,7 +1405,7 @@ function getSection3(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR <= 0) {
         return {
             code: 'C',
             name: 'แสงแห่งพลังเปล่งออกอย่างกลมกลืน',
@@ -1482,7 +1482,7 @@ function getSection4(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR <= 0) {
         return {
             code: 'C',
             name: 'หัวใจเปิด อบอุ่นแต่ไม่เปราะ',
@@ -1559,7 +1559,7 @@ function getSection5(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR <= 0) {
         return {
             code: 'C',
             name: 'เสียงที่กลมกลืนกับหัวใจ',
@@ -1636,7 +1636,7 @@ function getSection6(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR <= 0) {
         return {
             code: 'C',
             name: 'ตาที่สามเปิดในโลกจริง',
@@ -1713,7 +1713,7 @@ function getSection7(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR <= 0) {
         return {
             code: 'C',
             name: 'หลอมรวมกับแสง',
@@ -1790,7 +1790,7 @@ function getSection8(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR <= 0) {
         return {
             code: 'C',
             name: 'เชื่อมกับเส้นทางวิญญาณ',
@@ -1867,7 +1867,7 @@ function getSection9(AVG, VAR, hasHighScore, scores) {
         };
     }
     
-    if (AVG >= 3.0 && AVG <= 4.2 && VAR = 0) {
+    if (AVG >= 3.0 && AVG <= 4.2 && VAR <= 0) {
         return {
             code: 'C',
             name: 'หยั่งรากมั่นคงบนโลก',
@@ -2074,7 +2074,7 @@ const resultHtmlShow = `
 // แสดงผลลัพธ์ทั้งหมด
 
     document.getElementById('result-page').innerHTML = `
-        <div class="logo" style="text-align: center; font-size: 20px; margin-bottom: 20px;">ผลการทดสอบจักระทั้ง 7 ของคุณ</div>
+        <div class="logo" style="text-align: center; font-size: 20px; margin-bottom: 20px;">ผลการทดสอบจักระทั้ง 9 ของคุณ</div>
         ${resultHtmlShow}
        
         <button class="full-btn" onclick="copyLink()" style="display: none">
