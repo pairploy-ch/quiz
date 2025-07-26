@@ -1064,18 +1064,15 @@ function updateNavigationButtons() {
 
 // Calculate and show result
 function showResult() {
-    // Group answers by sections (3 questions per section)
-    const sections = [];
-    const sectionsData = [];
-    
-    // Group quiz data by sections - เฉพาะคำถามที่มี options เท่านั้น
     const sectionMap = {};
+    const sectionsData = [];
+
+    // เก็บคำตอบทั้งหมดยกเว้น null
+    globalAnswers = answers.filter(answer => answer !== null && answer !== undefined);
+
     quizData.forEach(question => {
-        // ข้ามสไลด์ภาพที่ไม่มี options
-        if (question.imageOnly || !question.options) {
-            return;
-        }
-        
+        if (question.imageOnly || !question.options) return;
+
         if (!sectionMap[question.section]) {
             sectionMap[question.section] = {
                 name: question.sectionName,
@@ -1084,38 +1081,28 @@ function showResult() {
         }
         sectionMap[question.section].questions.push(question);
     });
-    
-    // Calculate for each section
+
     for (let sectionNum = 1; sectionNum <= Object.keys(sectionMap).length; sectionNum++) {
         const sectionQuestions = sectionMap[sectionNum].questions;
         const sectionAnswers = [];
-        
-        // Get answers for this section
+
         sectionQuestions.forEach(question => {
             const answerIndex = question.id - 1;
-            if (answers[answerIndex] !== undefined) {
+            if (answers[answerIndex] !== undefined && answers[answerIndex] !== null) {
                 sectionAnswers.push(answers[answerIndex]);
             }
         });
-        
-        // ตรวจสอบว่ามีคำตอบครบ 3 ข้อหรือไม่
+
         if (sectionAnswers.length === 3) {
             const Q1 = sectionAnswers[0];
             const Q2 = sectionAnswers[1];
             const Q3 = sectionAnswers[2];
-            
-            // Calculate AVG
+
             const AVG = (Q1 + Q2 + Q3) / 3;
-            
-            // Calculate VAR
             const VAR = ((Math.pow(Q1 - AVG, 2) + Math.pow(Q2 - AVG, 2) + Math.pow(Q3 - AVG, 2)) / 3);
-            
-            // Check if any score >= 5
             const hasHighScore = sectionAnswers.some(score => score >= 5);
-            
-            // Determine category
             const category = determineCategory(AVG, VAR, hasHighScore, sectionAnswers, sectionNum);
-            
+
             sectionsData.push({
                 section: sectionNum,
                 name: sectionMap[sectionNum].name,
@@ -1126,9 +1113,11 @@ function showResult() {
             });
         }
     }
-    
+
+    globalSectionsData = sectionsData; // <-- เก็บผลลัพธ์ไว้ใน global
     displayResults(sectionsData);
 }
+
 
 // วิธีการตั้งค่าข้อมูลที่แนะนำ:
 /*
@@ -2419,6 +2408,8 @@ function showFullResultsWithClass() {
            function sendEmailData() {
             var name = $("#name");
             var email = $("#email");
+
+
           
             if(isNotEmpty(name) && isNotEmpty(email)) {
                 document.getElementById("loadingOverlay").style.display = "flex";
@@ -2438,6 +2429,37 @@ function showFullResultsWithClass() {
                     //     console.error('Ajax Error:', error);
                     // }
                 });
+
+                              const dataToSend = {
+                                
+timestamp: new Date().toLocaleString('th-TH'),
+        name: name.val(),
+        email: email.val(),
+        
+      
+    };
+    
+    // แยก globalAnswers เป็น Q1, Q2, Q3, ... Q27
+    globalAnswers.forEach((answer, index) => {
+        dataToSend[`Q${index + 1}`] = answer || ''; // Q1, Q2, Q3, ...
+    });
+
+    globalSectionsData.forEach((section, index) => {
+    dataToSend[`Result${index + 1}`] = section.category.code; // Result1, Result2, Result3, ...
+});
+
+      $.ajax({
+    url: 'https://script.google.com/macros/s/AKfycbx_pvlWFP4ZZ_0K-_Bruk-5MmC0o_M4wM0UhbTj92srgQVQVDqrqSdzwbJcUsjRvwY/exec',
+    method: 'POST',
+   data: dataToSend,
+    success: function (response) {
+        console.log("ส่งข้อมูลไป Google Sheets สำเร็จ:", response);
+    },
+    error: function (xhr, status, error) {
+        console.error("เกิดข้อผิดพลาด:", error);
+    }
+});
+
                      setTimeout(function () {
                 // ปิด loading
                 document.getElementById("loadingOverlay").style.display = "none";
